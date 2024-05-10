@@ -16,9 +16,9 @@ class Day2:
         self.y = 1
 
         self.keypad_dict.clear()      # x, y
-        self.keypad_dict = {(0, 0): 1, (1, 0): 2, (2, 0): 3,
-                            (0, 1): 4, (1, 1): 5, (2, 1): 6,
-                            (0, 2): 7, (1, 2): 8, (2, 2): 9}
+        self.keypad_dict = {(-1, 1): 1, (0, 1): 2, (1, 1): 3,
+                            (-1, 0): 4, (0, 0): 5, (1, 0): 6,
+                            (-1, -1): 7, (0, -1): 8, (1, -1): 9}
 
         result = ""
 
@@ -56,16 +56,16 @@ class Day2:
         for digits in self.input_array:
             for letter in digits:
                 if letter == 'U':
-                    self.up2()
+                    self.up()
                     continue
                 if letter == 'D':
-                    self.down2()
+                    self.down()
                     continue
                 if letter == 'L':
-                    self.left2()
+                    self.left()
                     continue
                 if letter == 'R':
-                    self.right2()
+                    self.right()
                     continue
 
             result += self.keypad_dict[(self.x, self.y)]
@@ -73,33 +73,17 @@ class Day2:
         return result
 
     def up(self):
-        if (self.x, self.y - 1) in self.keypad_dict.keys():
-            self.y -= 1
-
-    def down(self):
         if (self.x, self.y + 1) in self.keypad_dict.keys():
             self.y += 1
+
+    def down(self):
+        if (self.x, self.y - 1) in self.keypad_dict.keys():
+            self.y -= 1
 
     def left(self):
         if (self.x - 1, self.y) in self.keypad_dict.keys():
             self.x -= 1
 
     def right(self):
-        if (self.x + 1, self.y) in self.keypad_dict.keys():
-            self.x += 1
-
-    def up2(self):
-        if (self.x, self.y + 1) in self.keypad_dict.keys():
-            self.y += 1
-
-    def down2(self):
-        if (self.x, self.y - 1) in self.keypad_dict.keys():
-            self.y -= 1
-
-    def left2(self):
-        if (self.x - 1, self.y) in self.keypad_dict.keys():
-            self.x -= 1
-
-    def right2(self):
         if (self.x + 1, self.y) in self.keypad_dict.keys():
             self.x += 1

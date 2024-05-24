@@ -3,7 +3,7 @@ from unittest import TestCase
 from Days.Day3 import Day3
 
 
-class TestDay1(TestCase):
+class TestDay3(TestCase):
     def test_task1(self):
         expected_value = str(0)
         actual_value = Day3('../Resources/Day3/test1').task1()

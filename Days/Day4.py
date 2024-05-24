@@ -27,7 +27,7 @@ class Day4:
                 letter_dict[letter] = int(letter_dict[letter]) + 1
             else:
                 letter_dict[letter] = 1
-        # a sorted visszaad egy tuplét, az első értéke a kulcs, a második a value
+        # a sorted visszaad egy tupléból álló tömbot és a tuple tartalmazza a kulcsot és az értéket, az első értéke a kulcs, a második a value
         tmp = sorted(letter_dict.items(), key=lambda x: (-x[1], x[0]))
         result = tmp[0][0] + tmp[1][0] + tmp[2][0] + tmp[3][0] + tmp[4][0]
 

@@ -23,7 +23,7 @@ if __name__ == '__main__':
     print("day4 task2: " + d4.task2())
 
     d5 = Day5('Resources/Day5/input')
-    print("day5 task1: " + d5.task1())
+    # print("day5 task1: " + d5.task1())
     # print("day5 task2: " + d5.task2())
 
     d6 = Day6('Resources/Day6/input')

@@ -1,5 +1,4 @@
 import hashlib
-import sys
 
 from Utilities.read_file_to_string import read_to_string
 
@@ -43,8 +42,6 @@ class Day5:
                 i += 1
 
         return str(result)
-
-
 
     def md5_hash(self, bemenet):
         result = hashlib.md5(bemenet.encode()).hexdigest()

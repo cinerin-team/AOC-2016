@@ -7,12 +7,12 @@ class TestDay5(TestCase):
     pass
     # def test_task1(self):
     #     expected_value = "18f47a30"
-    #     actual_value = Day5('../Resources/Day5/test1').task1()
+    #     actual_value = Day5('../Resources/Day5/test1-1').task1()
     #     self.assertEqual(expected_value, actual_value)
     #
     # def test_task2(self):
     #     expected_value = str('05ace8e3')
-    #     actual_value = Day5('../Resources/Day5/test1').task2()
+    #     actual_value = Day5('../Resources/Day5/test1-1').task2()
     #     self.assertEqual(expected_value, actual_value)
     #
     # def test_orig(self):

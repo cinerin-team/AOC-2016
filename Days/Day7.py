@@ -1,7 +1,7 @@
 from Utilities.read_file_to_string_array import read_to_string_array
 
 
-class Day6:
+class Day7:
     input_array = []
 
     def __init__(self, file):

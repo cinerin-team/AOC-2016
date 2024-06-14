@@ -24,13 +24,13 @@ if __name__ == '__main__':
     print("day4 task1: " + d4.task1())
     print("day4 task2: " + d4.task2())
 
-    d5 = Day5('Resources/Day5/input')
-    print("day5 task1: " + d5.task1())
-    print("day5 task2: " + d5.task2())
+    # d5 = Day5('Resources/Day5/input')
+    # print("day5 task1: " + d5.task1())
+    # print("day5 task2: " + d5.task2())
 
     d6 = Day6('Resources/Day6/input')
-    # print("day6 task1: " + d6.task1())
-    # print("day6 task2: " + d6.task2())
+    print("day6 task1: " + d6.task1())
+    print("day6 task2: " + d6.task2())
 
     d7 = Day7('Resources/Day7/input')
     # print("day7 task1: " + d7.task1())

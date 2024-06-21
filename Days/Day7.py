@@ -47,7 +47,7 @@ class Day7:
                 subnet = ""
                 hypernet = ""
 
-                while counter < len(ip) and ip[counter] != ']' :
+                while counter < len(ip) and ip[counter] != ']':
                     hypernet += ip[counter]
                     counter += 1
 

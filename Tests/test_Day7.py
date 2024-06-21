@@ -21,15 +21,15 @@ class TestDay7(TestCase):
         self.assertEqual(expected_value, actual_value)
 
     # def test_task2(self):
-    #     expected_value = str('5DB3')
-    #     actual_value = Day7('../Resources/Day7/test1-1').task2()
+    #     expected_value = str('3')
+    #     actual_value = Day7('../Resources/Day7/test2').task2()
     #     self.assertEqual(expected_value, actual_value)
 
-    # def test_orig(self):
-    #     pass
-    #     expected_value = str(61529)
-    #     actual_value = Day7('../Resources/Day7/input').task1()
-    #     self.assertEqual(expected_value, actual_value)
+    def test_orig(self):
+        pass
+        expected_value = str('105')
+        actual_value = Day7('../Resources/Day7/input').task1()
+        self.assertEqual(expected_value, actual_value)
     #     #
     #     expected_value = str('C2C28')
     #     actual_value = Day7('../Resources/Day7/input').task2()

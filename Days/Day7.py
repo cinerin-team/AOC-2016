@@ -12,6 +12,25 @@ def abba(abba_input):
     return False
 
 
+def aba(aba_input):
+    result_list = []
+    for index in range(len(aba_input) - 2):
+        if aba_input[index] == aba_input[index + 2] and aba_input[index] != aba_input[index + 1]:
+            result_list.append(aba_input[index] + aba_input[index + 1] + aba_input[index + 2])
+
+    return result_list
+
+
+def bab(bab_input, aba):
+    for index in range(len(bab_input) - 2):
+        if bab_input[index] == bab_input[index + 2] and bab_input[index] != bab_input[index + 1]:
+            for item in aba:
+                if bab_input[index + 1] + bab_input[index] + bab_input[index + 1] == item:
+                    return True
+
+    return False
+
+
 class Day7:
     input_array = []
 
@@ -63,7 +82,53 @@ class Day7:
         return str(result)
 
     def task2(self):
-        pass
 
+        ssl_counter = 0
+        subnet = ""
+        hypernet = ""
 
+        # rnqfzoisbqxbdlkgfh[lwlybvcsiupwnsyiljz]kmbgyaptjcsvwcltrdx[ntrpwgkrfeljpye]jxjdlgtntpljxaojufe
+        # abba[mnop]qrst
 
+        for ip in self.input_array:
+
+            counter = 0
+            subnet_array = []
+            hypernet_array = []
+            subnet_array.clear()
+            hypernet_array.clear()
+
+            while counter < len(ip):
+                subnet = ""
+
+                while counter < len(ip) and ip[counter] != '[':
+                    subnet += ip[counter]
+                    counter += 1
+                subnet_array.append(subnet)
+
+                # if abba(subnet):
+                #     subnet_counter += 1
+
+                counter += 1
+                subnet = ""
+                hypernet = ""
+
+                while counter < len(ip) and ip[counter] != ']':
+                    hypernet += ip[counter]
+                    counter += 1
+                hypernet_array.append(hypernet)
+
+                # if abba(hypernet):
+                #     hypernet_counter += 1
+
+                counter += 1
+                hypernet = ""
+
+            for subnets in subnet_array:
+                lista = aba(subnets)
+                for hypernets in hypernet_array:
+                    if bab(hypernets, lista):
+                        ssl_counter += 1
+                        continue
+
+        return str(ssl_counter)

@@ -90,13 +90,16 @@ class Day7:
         # rnqfzoisbqxbdlkgfh[lwlybvcsiupwnsyiljz]kmbgyaptjcsvwcltrdx[ntrpwgkrfeljpye]jxjdlgtntpljxaojufe
         # abba[mnop]qrst
 
+        aba_array = []
+        bab_array = []
+        aba_array.clear()
+        bab_array.clear()
+
         for ip in self.input_array:
 
             counter = 0
-            subnet_array = []
-            hypernet_array = []
-            subnet_array.clear()
-            hypernet_array.clear()
+            aba_array.clear()
+            bab_array.clear()
 
             while counter < len(ip):
                 subnet = ""
@@ -104,7 +107,7 @@ class Day7:
                 while counter < len(ip) and ip[counter] != '[':
                     subnet += ip[counter]
                     counter += 1
-                subnet_array.append(subnet)
+                aba_array += aba(subnet)
 
                 # if abba(subnet):
                 #     subnet_counter += 1
@@ -116,7 +119,7 @@ class Day7:
                 while counter < len(ip) and ip[counter] != ']':
                     hypernet += ip[counter]
                     counter += 1
-                hypernet_array.append(hypernet)
+                bab_array += aba(hypernet)
 
                 # if abba(hypernet):
                 #     hypernet_counter += 1
@@ -124,11 +127,12 @@ class Day7:
                 counter += 1
                 hypernet = ""
 
-            for subnets in subnet_array:
-                lista = aba(subnets)
-                for hypernets in hypernet_array:
-                    if bab(hypernets, lista):
-                        ssl_counter += 1
-                        continue
+            for bab_item in bab_array:
+                if bab(bab_item, aba_array):
+                    ssl_counter += 1
+                    break
+
+    # aba array = [ yby, xyx, ulu, lil ]
+    # bab array = [ byb, byb, ili, opo ]
 
         return str(ssl_counter)

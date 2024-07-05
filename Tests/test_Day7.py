@@ -56,7 +56,7 @@ class TestDay7(TestCase):
         expected_value = str('105')
         actual_value = Day7('../Resources/Day7/input').task1()
         self.assertEqual(expected_value, actual_value)
-    #     #
-    #     expected_value = str('C2C28')
-    #     actual_value = Day7('../Resources/Day7/input').task2()
-    #     self.assertEqual(expected_value, actual_value)
+        #
+        expected_value = str('258')
+        actual_value = Day7('../Resources/Day7/input').task2()
+        self.assertEqual(expected_value, actual_value)

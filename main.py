@@ -37,5 +37,5 @@ if __name__ == '__main__':
     print("day7 task2: " + d7.task2())
 
     d8 = Day8('Resources/Day8/input')
-    # print("day8 task1: " + d8.task1())
+    print("day8 task1: " + d8.task1())
     # print("day8 task2: " + d8.task2())

@@ -3,15 +3,15 @@ from unittest import TestCase
 from Days.Day8 import Day8
 
 
-# class TestDay8(TestCase):
-#     def test_task1(self):
-#         expected_value = str('6')
-#         actual_value = Day8('../Resources/Day8/test1-1').task1()
-#         self.assertEqual(expected_value, actual_value)
-#
-#         Day8('../Resources/Day8/test1-2').task1()
-#         Day8('../Resources/Day8/test1-3').task1()
-#         Day8('../Resources/Day8/test1-4').task1()
+class TestDay8(TestCase):
+    def test_task1(self):
+        expected_value = str('6')
+        actual_value = Day8('../Resources/Day8/test1-1').task1()
+        self.assertEqual(expected_value, actual_value)
+
+        Day8('../Resources/Day8/test1-2').task1()
+        Day8('../Resources/Day8/test1-3').task1()
+        Day8('../Resources/Day8/test1-4').task1()
 
     # def test_task2(self):
     #     expected_value = str('5DB3')
@@ -20,7 +20,7 @@ from Days.Day8 import Day8
 
     # def test_orig(self):
     #     pass
-    #     expected_value = str(61529)
+    #     expected_value = str(119)
     #     actual_value = Day8('../Resources/Day8/input').task1()
     #     self.assertEqual(expected_value, actual_value)
     #     #

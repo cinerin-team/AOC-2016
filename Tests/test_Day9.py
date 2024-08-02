@@ -9,6 +9,26 @@ class TestDay9(TestCase):
         actual_value = Day9('../Resources/Day9/test1').task1()
         self.assertEqual(expected_value, actual_value)
 
+        expected_value = str('7')
+        actual_value = Day9('../Resources/Day9/test2').task1()
+        self.assertEqual(expected_value, actual_value)
+
+        expected_value = str('9')
+        actual_value = Day9('../Resources/Day9/test3').task1()
+        self.assertEqual(expected_value, actual_value)
+
+        expected_value = str('11')
+        actual_value = Day9('../Resources/Day9/test4').task1()
+        self.assertEqual(expected_value, actual_value)
+
+        expected_value = str('6')
+        actual_value = Day9('../Resources/Day9/test5').task1()
+        self.assertEqual(expected_value, actual_value)
+
+        expected_value = str('18')
+        actual_value = Day9('../Resources/Day9/test6').task1()
+        self.assertEqual(expected_value, actual_value)
+
     # def test_task2(self):
     #     expected_value = str('5DB3')
     #     actual_value = Day8('../Resources/Day8/test1-1').task2()

@@ -50,14 +50,14 @@ class Day9:
     def task2(self):
         decompressed_count = 0
         while "(" in self.input_string:
-            match = re.match(r'\((\d+)x(\d+)\)', self.input_string)
+            match = re.search(r'\((\d+)x(\d+)\)', self.input_string)
             if match:
                 mit = match.group(1)
                 mennyivel = match.group(2)
-                match2 = re.match(r'\('+mit+'x'+mennyivel+'\)\.{int(mit)}', self.input_string)
+                match2 = re.search(r'\('+mit+'x'+mennyivel+'\).{'+mit+'}', self.input_string)
                 if match2:
                     decompressed_count += int(mit)*int(mennyivel)
-                    self.input_string = re.sub(match2.group(0), "", self.input_string)
+                    self.input_string = re.sub(match2.group(0).replace("(","\(").replace(")","\)"), "", self.input_string)
 
         return str(len(self.input_string) + decompressed_count)
 

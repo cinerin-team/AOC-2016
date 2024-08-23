@@ -7,6 +7,7 @@ from Utilities.read_file_to_string import read_to_string
 
 class Day9:
     input_string = ""
+    input_string2 = ""
 
     def __init__(self, file):
         self.input_string = read_to_string(file)
@@ -38,8 +39,21 @@ class Day9:
 
         return result
 
-    def decompress2(self):
-        pass
+    # (6x1)(1x3)A
+    def decompress2(self, decompressed_count, temp):
+        match = re.search(r'\((\d+)x(\d+)\)', temp)
+        if match:
+            mit = match.group(1)
+            mennyivel = match.group(2)
+            match2 = re.search(r'\(' + mit + 'x' + mennyivel + '\)(.{' + mit + '})', temp)
+            if match2:
+                temp = re.sub(match2.group(0).replace("(", "\(").replace(")", "\)"), "", temp, 1)
+                if "(" in match2.group(1):
+                    decompressed_count += self.decompress2(decompressed_count, match2.group(1))
+                else:
+                    decompressed_count += int(mit) * int(mennyivel)
+
+        return decompressed_count + len(temp)
 
     def task1(self):
 
@@ -48,16 +62,9 @@ class Day9:
 
 
     def task2(self):
+        self.input_string2 = self.input_string
         decompressed_count = 0
-        while "(" in self.input_string:
-            match = re.search(r'\((\d+)x(\d+)\)', self.input_string)
-            if match:
-                mit = match.group(1)
-                mennyivel = match.group(2)
-                match2 = re.search(r'\('+mit+'x'+mennyivel+'\).{'+mit+'}', self.input_string)
-                if match2:
-                    decompressed_count += int(mit)*int(mennyivel)
-                    self.input_string = re.sub(match2.group(0).replace("(","\(").replace(")","\)"), "", self.input_string)
+        decompressed_count = self.decompress2(decompressed_count, self.input_string2)
 
-        return str(len(self.input_string) + decompressed_count)
+        return str(decompressed_count)
 

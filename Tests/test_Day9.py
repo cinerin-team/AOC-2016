@@ -46,13 +46,13 @@ class TestDay9(TestCase):
         actual_value = Day9('../Resources/Day9/test6').task2()
         self.assertEqual(expected_value, actual_value)
 
-        # expected_value = str('241920')
-        # actual_value = Day9('../Resources/Day9/test7').task2()
-        # self.assertEqual(expected_value, actual_value)
-        #
-        # expected_value = str('445')
-        # actual_value = Day9('../Resources/Day9/test8').task2()
-        # self.assertEqual(expected_value, actual_value)
+        expected_value = str('241920')
+        actual_value = Day9('../Resources/Day9/test7').task2()
+        self.assertEqual(expected_value, actual_value)
+
+        expected_value = str('445')
+        actual_value = Day9('../Resources/Day9/test8').task2()
+        self.assertEqual(expected_value, actual_value)
 
 
     def test_orig(self):

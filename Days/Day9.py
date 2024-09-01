@@ -39,7 +39,7 @@ class Day9:
 
         return result
 
-    # (6x1)(1x3)A
+    # (25x3)(3x3)ABC(2x3)XY(5x2)PQRSTX(18x9)(3x2)TWO(5x7)SEVEN
     def decompress2(self, decompressed_count, temp):
         match = re.search(r'\((\d+)x(\d+)\)', temp)
         if match:
@@ -49,11 +49,14 @@ class Day9:
             if match2:
                 temp = re.sub(match2.group(0).replace("(", "\(").replace(")", "\)"), "", temp, 1)
                 if "(" in match2.group(1):
-                    decompressed_count += self.decompress2(decompressed_count, match2.group(1))
+                    decompressed_count += self.decompress2(decompressed_count, match2.group(1)) * int(mennyivel)
                 else:
                     decompressed_count += int(mit) * int(mennyivel)
 
         return decompressed_count + len(temp)
+
+    def decomp3(self, decompressed_count, str):
+        pass
 
     def task1(self):
 

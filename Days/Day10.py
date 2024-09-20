@@ -3,7 +3,7 @@ import re
 from Utilities.read_file_to_string_array import read_to_string_array
 
 
-def give(value, dest, igen):
+def give_to_bot(value, dest, igen):
     if igen.keys().__contains__(dest):
         igen[dest].vodor.append(value)
 
@@ -13,11 +13,11 @@ def give(value, dest, igen):
 
     if len(igen[dest].vodor) == 2:
         if igen[dest].vodor[0] < igen[dest].vodor[1]:
-            give(igen[dest].vodor[0], igen[dest].lower_dest, igen)
-            give(igen[dest].vodor[1], igen[dest].higher_dest, igen)
+            give_to_bot(igen[dest].vodor[0], igen[dest].lower_dest, igen)
+            give_to_bot(igen[dest].vodor[1], igen[dest].higher_dest, igen)
         else:
-            give(igen[dest].vodor[1], igen[dest].lower_dest, igen)
-            give(igen[dest].vodor[0], igen[dest].higher_dest, igen)
+            give_to_bot(igen[dest].vodor[1], igen[dest].lower_dest, igen)
+            give_to_bot(igen[dest].vodor[0], igen[dest].higher_dest, igen)
         igen[dest].vodor.clear()
 
 
@@ -32,7 +32,7 @@ class Day10:
             if item.startswith("value"):
                 match = re.match(r'value (\d+) goes to (bot \d+)', item)
                 if match:
-                    give(match.group(1), match.group(2), igen)
+                    give_to_bot(match.group(1), match.group(2), igen)
 
             else:
                 match = re.match(r'(bot \d+) gives low to (bot|output \d+) and high to (bot|output \d+)', item)
